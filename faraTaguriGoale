@@ -3,7 +3,6 @@ const { EmbedBuilder } = require('discord.js');
 module.exports = {
   name: 'messageCreate',
   setup(client) {
-    // Canalele vizate
     const targetChannels = [
       '1140636457812361236',
       '1159405932686606418',
@@ -15,7 +14,6 @@ module.exports = {
     const reportChannelId = '1379137679853355099';
 
     client.on('messageCreate', async (message) => {
-      // Ignoră mesajele de la boți, din alte canale sau comenzile cu prefix
       if (
         message.author.bot ||
         !targetChannels.includes(message.channel.id) ||
